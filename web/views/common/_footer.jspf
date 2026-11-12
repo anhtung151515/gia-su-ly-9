@@ -1,0 +1,48 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<footer class="site-footer">
+    <div class="inner">
+        <div>
+            <h4>Gia Sư Lý</h4>
+            <p>Nền tảng gia sư Vật lý lớp 9: bài giảng, luyện tập và AI tương tác từng bước.</p>
+            <p class="mb-0" style="font-size:.82rem;color:#8fa3c0;">
+                <i class="bi bi-geo-alt"></i> 123 Nguyễn Văn Linh, Quận 7, TP.HCM<br>
+                <i class="bi bi-telephone"></i> 1900 1234<br>
+                <i class="bi bi-envelope"></i> support@giasuly9.vn
+            </p>
+        </div>
+        <div>
+            <h4>Học tập</h4>
+            <a href="${pageContext.request.contextPath}/home">Trang chủ</a>
+            <a href="${pageContext.request.contextPath}/topics">Chủ đề Vật lý 9</a>
+            <a href="${pageContext.request.contextPath}/teachers">Giáo viên</a>
+            <a href="${pageContext.request.contextPath}/student/lessons">Bài giảng</a>
+            <a href="${pageContext.request.contextPath}/student/practice-setup?type=MCQ">Luyện trắc nghiệm</a>
+            <a href="${pageContext.request.contextPath}/student/practice-setup?type=ESSAY">Luyện tự luận</a>
+        </div>
+        <div>
+            <h4>Tài khoản</h4>
+            <a href="${pageContext.request.contextPath}/login">Đăng Nhập</a>
+            <a href="${pageContext.request.contextPath}/register">Đăng Ký</a>
+            <a href="${pageContext.request.contextPath}/ai-chat">Gia sư AI</a>
+            <a href="${pageContext.request.contextPath}/teacher/dashboard">Giáo viên</a>
+            <a href="${pageContext.request.contextPath}/admin/dashboard">Trang quản trị</a>
+        </div>
+        <div>
+            <h4>Thông tin</h4>
+            <span class="stat-v">3</span>
+            <span class="stat-l">Vai trò trong hệ thống</span>
+            <div class="mt-3">
+                <span class="stat-v">12+</span>
+                <span class="stat-l">Chủ đề Vật lý 9</span>
+            </div>
+            <div class="mt-3">
+                <span class="stat-v">24/7</span>
+                <span class="stat-l">Gia sư AI sẵn sàng</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Gia Sư Lý 9 — Đồ án học phần.</span>
+        <span>Java 17 · Jakarta EE 10 · Tomcat 10 · SQL Server</span>
+    </div>
+</footer>

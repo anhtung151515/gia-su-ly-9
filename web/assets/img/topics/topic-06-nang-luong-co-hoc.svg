@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Nang luong co hoc">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="0.55" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g1)"/>
+  <circle cx="520" cy="300" r="140" fill="#ffffff" opacity="0.05"/>
+  <circle cx="90" cy="50" r="90" fill="#ffffff" opacity="0.06"/>
+  <g transform="translate(190 215)">
+    <circle cx="0" cy="0" r="42" fill="#ffffff" opacity="0.95"/>
+    <circle cx="0" cy="0" r="42" fill="none" stroke="#1e3a8a" stroke-width="4"/>
+    <path d="M-42 0 H42" stroke="#1e3a8a" stroke-width="3" stroke-opacity="0.5"/>
+    <ellipse cx="0" cy="0" rx="42" ry="15" fill="none" stroke="#1e3a8a" stroke-width="3" stroke-opacity="0.5"/>
+    <g stroke="#f9b115" stroke-width="5" stroke-linecap="round">
+      <path d="M56 6 H104"/>
+      <path d="M94 -8 L104 6 L94 20"/>
+    </g>
+    <g stroke="#f87171" stroke-width="5" stroke-linecap="round">
+      <path d="M0 52 V96"/>
+      <path d="M-9 84 L0 96 L9 84"/>
+    </g>
+    <text x="0" y="-56" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="800"
+          fill="#ffffff" text-anchor="middle">m</text>
+  </g>
+  <g transform="translate(430 220)">
+    <circle cx="0" cy="0" r="56" fill="none" stroke="#ffffff" stroke-width="8" stroke-opacity="0.95"/>
+    <circle cx="0" cy="0" r="10" fill="#f9b115"/>
+    <g stroke="#ffffff" stroke-width="4" stroke-opacity="0.8">
+      <path d="M0 -56 V-14"/>
+      <path d="M0 14 V56"/>
+      <path d="M-56 0 H-14"/>
+      <path d="M14 0 H56"/>
+      <path d="M-40 -40 L-10 -10"/>
+      <path d="M40 -40 L10 -10"/>
+      <path d="M-40 40 L-10 10"/>
+      <path d="M40 40 L10 10"/>
+    </g>
+    <path d="M-70 68 H70" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-opacity="0.5"/>
+  </g>
+  <g transform="translate(560 105)">
+    <path d="M-34 46 L0 46 L0 22 L34 22 L34 -2 L68 -2" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" opacity="0.8"/>
+    <circle cx="-34" cy="46" r="11" fill="#f9b115"/>
+    <text x="-20" y="76" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700"
+          fill="#ffffff" opacity="0.9">W</text>
+  </g>
+</svg>

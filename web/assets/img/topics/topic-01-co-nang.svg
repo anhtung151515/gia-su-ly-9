@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Co nang va nang luong">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d47a1"/>
+      <stop offset="0.55" stop-color="#0d6efd"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g1)"/>
+  <circle cx="520" cy="70" r="120" fill="#ffffff" opacity="0.07"/>
+  <circle cx="80" cy="320" r="150" fill="#ffffff" opacity="0.05"/>
+  <path d="M0 250 Q160 190 320 250 T640 250 V360 H0 Z" fill="#ffffff" opacity="0.10"/>
+  <rect x="0" y="0" width="640" height="360" fill="url(#g2)"/>
+  <g stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="7 8" fill="none">
+    <path d="M150 60 V210"/>
+  </g>
+  <g>
+    <circle cx="150" cy="228" r="20" fill="#f9b115"/>
+    <circle cx="150" cy="228" r="30" fill="#f9b115" opacity="0.22"/>
+    <path d="M124 228 H176" stroke="#ffffff" stroke-width="3" stroke-opacity="0.5"/>
+  </g>
+  <g transform="translate(330 105)">
+    <circle cx="0" cy="0" r="34" fill="none" stroke="#ffffff" stroke-width="7"/>
+    <circle cx="0" cy="0" r="7" fill="#ffffff"/>
+    <path d="M-34 0 H34 M0 -34 V34" stroke="#ffffff" stroke-width="2" stroke-opacity="0.55"/>
+    <path d="M0 34 V128" stroke="#ffffff" stroke-width="3" stroke-opacity="0.85"/>
+    <rect x="-30" y="128" width="60" height="26" rx="6" fill="#ffffff" opacity="0.92"/>
+    <path d="M-52 168 H52" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-opacity="0.75"/>
+  </g>
+  <g transform="translate(505 235)">
+    <path d="M12 0 L-20 78 H2 L-12 122 L34 40 H10 Z" fill="#f9b115"/>
+  </g>
+</svg>

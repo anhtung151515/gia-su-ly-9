@@ -1,0 +1,104 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.giasuly9.model.User" %>
+<%
+    String sideActive = (String) request.getAttribute("activeMenu");
+    if (sideActive == null) { sideActive = ""; }
+    User sideUser = null;
+    if (request.getSession(false) != null) {
+        Object rawUser = request.getSession(false).getAttribute("user");
+        if (rawUser instanceof User) {
+            sideUser = (User) rawUser;
+        }
+    }
+    String sideRole = sideUser != null ? sideUser.getRole() : "";
+    boolean isAdminSide = "ADMIN".equalsIgnoreCase(sideRole);
+%>
+<aside class="app-sidebar">
+    <div class="side-brand">
+        <img src="${pageContext.request.contextPath}/assets/img/logo.svg" alt="Gia Sư Lý">
+        <span>Gia&nbsp;Sư&nbsp;<em>Lý</em></span>
+    </div>
+
+    <% if (isAdminSide) { %>
+        <div class="side-section">Quản trị</div>
+        <a class="side-link <%= "dashboard".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/dashboard">
+            <i class="bi bi-speedometer2"></i> Tổng quan
+        </a>
+        <a class="side-link <%= "users".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/users">
+            <i class="bi bi-people"></i> Người dùng
+        </a>
+        <a class="side-link <%= "subjects".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/subjects">
+            <i class="bi bi-atom"></i> Môn học
+        </a>
+        <a class="side-link <%= "topics".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/topics">
+            <i class="bi bi-folder2"></i> Chủ đề
+        </a>
+        <a class="side-link <%= "lessons".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/lessons">
+            <i class="bi bi-collection-play"></i> Bài giảng
+        </a>
+        <a class="side-link <%= "questions".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/questions">
+            <i class="bi bi-patch-question"></i> Ngân hàng câu hỏi
+        </a>
+        <a class="side-link <%= "practices".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/practices">
+            <i class="bi bi-clipboard-data"></i> Luyện tập
+        </a>
+        <a class="side-link <%= "question-stats".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/question-stats">
+            <i class="bi bi-graph-up-arrow"></i> Thống kê làm sai
+        </a>
+
+        <div class="side-section">AI</div>
+        <a class="side-link <%= "ai-settings".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/ai-settings">
+            <i class="bi bi-gear"></i> Cấu hình API AI
+        </a>
+        <a class="side-link <%= "ai-logs".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/admin/ai-logs">
+            <i class="bi bi-journal-text"></i> Nhật ký AI
+        </a>
+    <% } else { %>
+        <div class="side-section">Giáo viên</div>
+        <a class="side-link <%= "dashboard".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/teacher/dashboard">
+            <i class="bi bi-speedometer2"></i> Tổng quan
+        </a>
+        <a class="side-link <%= "lessons".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/teacher/lessons">
+            <i class="bi bi-collection-play"></i> Bài giảng
+        </a>
+        <a class="side-link <%= "questions".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/teacher/questions">
+            <i class="bi bi-patch-question"></i> Ngân hàng câu hỏi
+        </a>
+        <a class="side-link <%= "topics".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/teacher/topics">
+            <i class="bi bi-folder2"></i> Chủ đề Vật lý 9
+        </a>
+        <a class="side-link <%= "ai-generator".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/teacher/ai-generator">
+            <i class="bi bi-stars"></i> AI tạo câu hỏi
+        </a>
+        <a class="side-link <%= "question-stats".equals(sideActive) ? "active" : "" %>"
+           href="${pageContext.request.contextPath}/teacher/question-stats">
+            <i class="bi bi-graph-up-arrow"></i> Thống kê làm sai
+        </a>
+    <% } %>
+
+    <div class="side-section">Khác</div>
+    <a class="side-link" href="${pageContext.request.contextPath}/ai-chat">
+        <i class="bi bi-stars"></i> AI giải bài
+    </a>
+    <a class="side-link" href="${pageContext.request.contextPath}/home">
+        <i class="bi bi-house"></i> Trang chủ
+    </a>
+    <a class="side-link" href="${pageContext.request.contextPath}/logout" style="color:#fca5a5;">
+        <i class="bi bi-box-arrow-right"></i> Đăng xuất
+    </a>
+</aside>

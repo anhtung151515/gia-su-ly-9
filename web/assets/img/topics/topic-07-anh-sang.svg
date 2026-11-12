@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Anh sang">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a16207"/>
+      <stop offset="0.45" stop-color="#eab308"/>
+      <stop offset="1" stop-color="#fde047"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g1)"/>
+  <circle cx="140" cy="300" r="130" fill="#ffffff" opacity="0.12"/>
+  <circle cx="560" cy="70" r="110" fill="#ffffff" opacity="0.14"/>
+  <g transform="translate(250 180)">
+    <path d="M0 -78 L70 50 L-70 50 Z" fill="#ffffff" opacity="0.30" stroke="#ffffff" stroke-width="3"/>
+    <path d="M-160 -78 L-6 -12" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+    <g stroke-width="4" stroke-linecap="round">
+      <path d="M-6 -12 L130 28" stroke="#ef4444"/>
+      <path d="M-6 -12 L130 42" stroke="#f97316"/>
+      <path d="M-6 -12 L130 56" stroke="#facc15"/>
+      <path d="M-6 -12 L130 70" stroke="#22c55e"/>
+      <path d="M-6 -12 L130 84" stroke="#3b82f6"/>
+    </g>
+    <text x="0" y="-96" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700"
+          fill="#ffffff" text-anchor="middle" opacity="0.9">Tan sac</text>
+  </g>
+  <g transform="translate(470 195)">
+    <ellipse cx="0" cy="0" rx="40" ry="70" fill="#ffffff" opacity="0.20" stroke="#ffffff" stroke-width="4"/>
+    <path d="M-40 -70 Q0 -92 40 -70" fill="#ffffff" opacity="0.3"/>
+    <path d="M-40 70 Q0 92 40 70" fill="#ffffff" opacity="0.3"/>
+    <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9">
+      <path d="M-92 -40 L-26 -16"/>
+      <path d="M-92 40 L-26 16"/>
+      <path d="M-26 -16 L66 0"/>
+      <path d="M-26 16 L66 0"/>
+    </g>
+    <circle cx="66" cy="0" r="8" fill="#ffffff"/>
+  </g>
+  <g transform="translate(120 78)">
+    <g fill="none" stroke-width="5" stroke-linecap="round" opacity="0.9">
+      <path d="M-64 22 A 64 64 0 0 1 -40 -12" stroke="#ef4444"/>
+      <path d="M-62 24 A 64 64 0 0 1 -32 -16" stroke="#f97316"/>
+      <path d="M-60 26 A 64 64 0 0 1 -24 -20" stroke="#facc15"/>
+      <path d="M-58 28 A 64 64 0 0 1 -16 -24" stroke="#22c55e"/>
+      <path d="M-56 30 A 64 64 0 0 1 -8 -28" stroke="#3b82f6"/>
+    </g>
+  </g>
+</svg>

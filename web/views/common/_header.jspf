@@ -1,0 +1,92 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.giasuly9.model.User" %>
+<%
+    String activeMenu = (String) request.getAttribute("activeMenu");
+    if (activeMenu == null) { activeMenu = ""; }
+    User sessionUser = null;
+    if (request.getSession(false) != null) {
+        Object rawUser = request.getSession(false).getAttribute("user");
+        if (rawUser instanceof User) {
+            sessionUser = (User) rawUser;
+        }
+    }
+    String role = sessionUser != null ? sessionUser.getRole() : "";
+%>
+<nav class="navbar navbar-expand-lg site-navbar">
+    <div class="container">
+        <a class="navbar-brand brand" href="${pageContext.request.contextPath}/home">
+            <img src="${pageContext.request.contextPath}/assets/img/logo.svg" alt="Gia Sư Lý">
+            Gia&nbsp;Sư&nbsp;<em>Lý</em>
+        </a>
+
+        <!-- Ô tìm kiếm (kiểu HOCMAI) -->
+        <form class="nav-search d-none d-lg-flex" action="${pageContext.request.contextPath}/topics" method="get">
+            <input type="text" name="q" placeholder="Tìm kiếm bài giảng, chủ đề..." aria-label="Tìm kiếm">
+            <button type="submit" aria-label="Tìm kiếm"><i class="bi bi-search"></i></button>
+        </form>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMain">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                <li class="nav-item"><a class="nav-link <%= "home".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/home">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link <%= "topics".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/topics">Chủ đề</a></li>
+                <li class="nav-item"><a class="nav-link <%= "teachers".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/teachers">Giáo viên</a></li>
+                <% if (sessionUser != null) { %>
+                    <% if ("STUDENT".equalsIgnoreCase(role)) { %>
+                        <li class="nav-item"><a class="nav-link <%= "lessons".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/student/lessons">Bài giảng</a></li>
+                        <li class="nav-item"><a class="nav-link <%= "learning-progress".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/student/learning-progress">Tiến độ học</a></li>
+                        <li class="nav-item"><a class="nav-link <%= "practice".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/student/practice-setup">Luyện tập</a></li>
+                        <li class="nav-item"><a class="nav-link <%= "history".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/student/history">Lịch sử</a></li>
+                    <% } else if ("TEACHER".equalsIgnoreCase(role)) { %>
+                        <li class="nav-item"><a class="nav-link <%= "lessons".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/teacher/lessons">Bài giảng</a></li>
+                        <li class="nav-item"><a class="nav-link <%= "questions".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/teacher/questions">Ngân hàng câu hỏi</a></li>
+                        <li class="nav-item"><a class="nav-link <%= "ai-generator".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/teacher/ai-generator">AI tạo câu hỏi</a></li>
+                    <% } else if ("ADMIN".equalsIgnoreCase(role)) { %>
+                        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admin/dashboard">Quản trị</a></li>
+                    <% } %>
+                    <li class="nav-item"><a class="nav-link <%= "ai-chat".equals(activeMenu) ? "active" : "" %>" href="${pageContext.request.contextPath}/ai-chat"><i class="bi bi-stars"></i> Gia sư AI</a></li>
+                <% } %>
+            </ul>
+
+            <div class="d-flex gap-2 align-items-center">
+                <a class="nav-phone d-none d-xl-inline-flex" href="tel:19001234">
+                    <i class="bi bi-telephone-fill"></i> 1900 1234
+                </a>
+
+                <% if (sessionUser == null) { %>
+                    <a class="btn btn-nav btn-nav-ghost" href="${pageContext.request.contextPath}/login">Đăng Nhập</a>
+                    <a class="btn btn-nav btn-nav-cta" href="${pageContext.request.contextPath}/register">Đăng Ký</a>
+                <% } else { %>
+                    <div class="dropdown">
+                        <button class="user-chip dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <span class="user-avatar"><i class="bi bi-person-fill"></i></span>
+                            <%= sessionUser.getFullName() %>
+                            <span class="role-badge <%= role %>"><%= role %></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><h6 class="dropdown-header">Xin chào, <%= sessionUser.getFullName() %></h6></li>
+                            <% if ("STUDENT".equalsIgnoreCase(role)) { %>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/student/dashboard"><i class="bi bi-speedometer2"></i> Bảng điều khiển</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/student/lessons"><i class="bi bi-book"></i> Bài giảng</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/student/learning-progress"><i class="bi bi-journal-check"></i> Tiến độ học</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/student/practice-setup"><i class="bi bi-pencil-square"></i> Luyện tập</a></li>
+                            <% } else if ("TEACHER".equalsIgnoreCase(role)) { %>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/teacher/dashboard"><i class="bi bi-speedometer2"></i> Bảng điều khiển</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/teacher/ai-generator"><i class="bi bi-stars"></i> AI tạo câu hỏi</a></li>
+                            <% } else { %>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/admin/dashboard"><i class="bi bi-speedometer2"></i> Quản trị</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/admin/ai-settings"><i class="bi bi-gear"></i> Cấu hình AI</a></li>
+                            <% } %>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/ai-chat"><i class="bi bi-stars"></i> Gia sư AI</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="${pageContext.request.contextPath}/logout"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

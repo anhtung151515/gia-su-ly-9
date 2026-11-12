@@ -1,0 +1,23 @@
+/dist/
+build/
+nbproject/private/
+
+# File backup / tạm của NetBeans
+*~
+
+# Thư mục upload ảnh chạy local
+/web/uploads/
+
+# File cấu hình kết nối DB chứa mật khẩu - KHÔNG commit
+# Dùng file .example làm mẫu
+/web/WEB-INF/ConnectDB.properties
+
+# File .sql được yêu cầu để nằm NGOÀI thư mục gốc repo
+*.sql
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
